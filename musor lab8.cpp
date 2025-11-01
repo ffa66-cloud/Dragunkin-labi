@@ -8,8 +8,8 @@ int add(T a[], int s, T e) {
 }
 int main()
 {
-    int s =3;
-    int a[s]={566548,4968412,8767239};
+    int s=3;
+    int a[3]={566548,4968412,8767239};
     for(int i=0; i<s; i++)
     cout<<a[i]<<"\n";
     cout<<"\nразмер "<<s<<"\n"<<"new\n"<<endl;
