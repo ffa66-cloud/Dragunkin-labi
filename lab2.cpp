@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include <sstream>
 using namespace std;
 
 struct Time {
@@ -50,18 +49,18 @@ void display(const Time &t) {
 }
 
 string toString(const Time &t) {
-    stringstream ss;
-    ss << (t.hours < 10 ? "0" : "") << t.hours << ":"
-       << (t.minutes < 10 ? "0" : "") << t.minutes << ":"
-       << (t.seconds < 10 ? "0" : "") << t.seconds;
-    return ss.str();
+   string result = "";
+    result += (t.hours < 10 ? "0" : "") + to_string(t.hours) + ":";
+    result += (t.minutes < 10 ? "0" : "") + to_string(t.minutes) + ":";
+    result += (t.seconds < 10 ? "0" : "") + to_string(t.seconds);
+    return result;
 }
 
 void initFromString(Time &t, const string &timeStr) {
-    char colon;
-    int h, m, s;
-    stringstream ss(timeStr);
-    ss >> h >> colon >> m >> colon >> s;
+   int h = (timeStr[0] - '0') * 10 + (timeStr[1] - '0');
+    int m = (timeStr[3] - '0') * 10 + (timeStr[4] - '0');
+    int s = (timeStr[6] - '0') * 10 + (timeStr[7] - '0');
+    
     init(t, h, m, s);
 }
 
