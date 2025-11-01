@@ -57,16 +57,16 @@ public:
         }
     }
     
-        void clearRecursive(Node* node) {
+        void clearR(Node* node) {
         if (node) {
-            clearRecursive(node->left);
-            clearRecursive(node->right);
+            clearR(node->left);
+            clearR(node->right);
             delete node;
         }
     }
    
     void clear() {
-        clearRecursive(root);
+        clearR(root);
         root = nullptr;
     }
     
@@ -81,16 +81,16 @@ public:
     void print() {
         cout << "Дерево:" << endl;
         cout << "====================" << endl;
-        printRecursive(root, 0, 40);
+        printR(root, 0, 40);
         cout << "====================" << endl;
     }
     
 private:
    
-    void printRecursive(Node* node, int level, int spaces) {
+    void printR(Node* node, int level, int spaces) {
         if (node) {
          
-            printRecursive(node->right, level + 1, spaces + 8);
+            printR(node->right, level + 1, spaces + 8);
             
          
             for (int i = 0; i < spaces; i++) {
@@ -99,7 +99,7 @@ private:
             cout << node->vrem << endl;
             
           
-            printRecursive(node->left, level + 1, spaces + 8);
+            printR(node->left, level + 1, spaces + 8);
         }
     }
 };
