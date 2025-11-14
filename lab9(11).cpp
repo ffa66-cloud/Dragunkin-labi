@@ -184,3 +184,35 @@ private:
         }
     }
 };
+int main() {
+    BinaryTree<int> tree;
+    
+ 
+    cout << "Добавляем элементы: 5, 3, 7, 2, 4" << endl;
+    tree.insert(5);
+    tree.insert(3);
+    tree.insert(7);
+    tree.insert(2);
+    tree.insert(4);
+    
+    tree.print();
+    cout << "Есть ли 3 в дереве: " << tree.poisk(3) << endl;
+    cout << "Есть ли 6 в дереве: " << tree.poisk(6) << endl;
+    
+    
+    cout << "Содержимое дерева: " << tree.toString() << endl;
+    
+    
+    cout << "Удаляем элемент 3" << endl;
+    tree.remove(3);
+    tree.print();
+    cout << "Содержимое после удаления: " << tree.toString() << endl;
+   
+    cout << "Дерево пустое: " << tree.empty() << endl;
+    
+    
+    tree.clear();
+    cout << "После очистки дерево пустое: " << tree.empty() << endl;
+    
+    return 0;
+}
